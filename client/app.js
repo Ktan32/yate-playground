@@ -161,10 +161,5 @@
                 }
             });
         });
-
-        $('#copy_button').click(function() {
-
-        });
-
     });
 }(this));
