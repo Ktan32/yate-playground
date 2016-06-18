@@ -2,6 +2,11 @@
     /*global angular*/
     var yateApp = angular.module('yate', []);
 
+    /* SAVING! */
+    $('#save_button').click(function(e) {
+        alert('Have to be done yet!');
+    });
+
     /**
      * @desc Object of source editor (CodeMirror)
      */
@@ -72,10 +77,9 @@
 
 
         var logger = new Logger('repl');
+        var editorValue = editorObject.getValue();
 
-        $scope.repl_source = editorObject.getValue();
         $scope.version = yate.version;
-
         var indicator = $('#compile_status');
 
         /**
@@ -109,7 +113,8 @@
         };
 
         // For the first time, run compile() manually
-        compile(editorObject.getValue());
+        compile(editorValue); // For the first time, run compile() manually
+        editorObject.setCursor({line: editorValue.split('\n').length, ch: null}); // Set carret at the end
 
         editorObject.on('change', function(cm) {
             // Compile with pause
