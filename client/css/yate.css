@@ -117,6 +117,31 @@ body {
 #right_header * {
     padding: 0;
 }
+
+#copy_block {
+    max-height: 10px;
+    position: absolute;
+    left: -220px;
+    top: -5px;
+    z-index: 10;
+    width: 200px;
+    display: none;
+}
+
+#paste_input {
+    background-color: #2b2b2b;
+    color: #ccc;
+}
+
+#loader_block {
+    margin-right: 20px;
+    display: none;
+}
+
+#open_button_url {
+    color: #2b2b2b;
+}
+
 /* right header end */
 
 
@@ -155,3 +180,4 @@ body {
     border-width: 0px;
     font-size: 14px;
 }
+
