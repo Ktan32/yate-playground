@@ -2,26 +2,6 @@
     /*global angular*/
     var yateApp = angular.module('yate', []);
 
-    /* SAVING! */
-    $('#save_button').click(function() {
-        var data = {
-            "description": "the description for this gist",
-            "public": true,
-            "files": {
-                "file1.txt": {
-                    "content": "String file contents"
-                }
-            }
-        };
-        $.ajax({
-            url: 'https://api.github.com/gists/',
-            method: 'POST',
-            data: JSON.stringify(data),
-            success: function(a) {
-                console.log(a);
-            }
-        });
-    });
 
     /**
      * @desc Object of source editor (CodeMirror)
@@ -58,6 +38,7 @@
             return cm;
         }());
     }(this));
+
 
     /**
      * @desc Logger
@@ -142,5 +123,43 @@
             }, 50, true);
         });
 
+        var paste_input = $('#paste_input');
+        /* SAVING! */
+        $('#save_button').click(function() {
+            var copy_block = $('#copy_block');
+            var loader_block = $('#loader_block');
+            var data = {
+                "description": "Just a played once file",
+                "public": true,
+                "files": {
+                    "yate-playground.yate": {
+                        "content": editorObject.getValue()
+                    }
+                }
+            };
+            $.ajax({
+                url: 'https://api.github.com/gists',
+                method: 'POST',
+                data: JSON.stringify(data),
+                beforeSend: function() {
+                    copy_block.hide();
+                    loader_block.show();
+                },
+                success: function(answer) {
+                    var url = answer.html_url;
+                    copy_block.show();
+                    paste_input.val(url);
+                    paste_input.select();
+                    $('#open_button_url').attr('href', url);
+                },
+                error: function(xhr, status, error) {
+                    alert('Something went wrong...');
+                    console.error(xhr, status, error);
+                },
+                complete: function() {
+                    loader_block.hide();
+                }
+            });
+        });
     });
 }(this));
