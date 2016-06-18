@@ -78,6 +78,7 @@
 
         var logger = new Logger('repl');
         var editorValue = editorObject.getValue();
+        $scope.repl_source = editorValue;
 
         $scope.version = yate.version;
         var indicator = $('#compile_status');
