@@ -3,8 +3,24 @@
     var yateApp = angular.module('yate', []);
 
     /* SAVING! */
-    $('#save_button').click(function(e) {
-        alert('Have to be done yet!');
+    $('#save_button').click(function() {
+        var data = {
+            "description": "the description for this gist",
+            "public": true,
+            "files": {
+                "file1.txt": {
+                    "content": "String file contents"
+                }
+            }
+        };
+        $.ajax({
+            url: 'https://api.github.com/gists/',
+            method: 'POST',
+            data: JSON.stringify(data),
+            success: function(a) {
+                console.log(a);
+            }
+        });
     });
 
     /**
