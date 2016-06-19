@@ -112,7 +112,7 @@
 
         // For the first time, run compile() manually
         compile(editorValue); // For the first time, run compile() manually
-        editorObject.setCursor({line: editorValue.split('\n').length-2, ch: null}); // Set carret at the end of n-1 line
+        editorObject.setCursor({line: editorValue.split('\n').length-3, ch: null}); // Set carret at the end of n-3 line
 
         editorObject.on('change', function(cm) {
             // Compile with pause
