@@ -55,7 +55,7 @@ body {
 }
 
 .remove-spaces {
-    line-height: 0;
+    line-height: 0px;
     font-size: 0;
 }
 
