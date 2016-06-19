@@ -29,7 +29,7 @@
             var cm = CodeMirror.fromTextArea(resultTextArea.get(0), {
                 autoClearEmptyLines: true,
                 theme: 'base16-light',
-                readOnly: true,
+                readOnly: 'nocursor',
                 mode: "htmlmixed",
                 lineNumbers: false,
                 autofocus: false,
@@ -112,7 +112,7 @@
 
         // For the first time, run compile() manually
         compile(editorValue); // For the first time, run compile() manually
-        editorObject.setCursor({line: editorValue.split('\n').length, ch: null}); // Set carret at the end
+        editorObject.setCursor({line: editorValue.split('\n').length-2, ch: null}); // Set carret at the end of n-1 line
 
         editorObject.on('change', function(cm) {
             // Compile with pause
@@ -129,7 +129,7 @@
             var copy_block = $('#copy_block');
             var loader_block = $('#loader_block');
             var data = {
-                "description": "Just a played once file",
+                "description": "Just an YATE file",
                 "public": true,
                 "files": {
                     "yate-playground.yate": {

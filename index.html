@@ -17,28 +17,26 @@
             <div id="left_part" class="col-md-8 full_height">
                 <header>
                     <div class="header_links">
-                            <strong id="title">YATE playground</strong>
-                            <a href="https://github.com/f-o-r/yate-playground">Github</a>
-                            <a href="https://github.com/pasaran/yate/wiki/syntax">Documentation</a>
-                            <a href="https://github.com/f-o-r/yate-playground/issues">Issues</a>
+                            <strong id="title">YATE play</strong>
+                            <a href="https://github.com/f-o-r/yate-playground"><span class="button-link">Github</span></a>
+                            <a href="https://github.com/pasaran/yate/wiki/syntax"><span class="button-link">Documentation<span></a>
+                            <a href="https://github.com/f-o-r/yate-playground/issues"><span class="button-link">Issues</span></a>
 
                             <div class="right_menu_wrapper">
                                 <div class="right_menu">
                                     <span id="loader_block">
                                         Sending file...
                                     </span>
-                                    <a href="#" id="save_button">Save</a>
-                                    <span class="autorun">Autorun</span>
-
-                                    <form class="form-inline" id="copy_block">
-                                        <div class="input-group">
+                                    <div id="copy_block_container">
+                                        <div id="copy_block" class="input-group">
                                             <input id="paste_input" type="text" class="form-control input-sm"
-                                                   value="https://api.github.com/gists/aa5a04605a2cd4a476cef87d52ce95b3">
-                                                <a href="" id="open_button_url" target="_blank" class="input-group-addon glowing_color">
-                                                    <span class="glyphicon glyphicon-eye-open"></span>
+                                                   value="here will be your link">
+                                                <a href="" id="open_button_url" target="_blank" class="input-group-addon">
+                                                    <span class="glyphicon glyphicon-play"></span>
                                                 </a>
                                         </div>
-                                    </form>
+                                    </div>
+                                    <span id="save_button" class="autorun">Save</span>
                                 </div>
                             </div>
                     </div>
@@ -56,8 +54,8 @@ module "hello"
 
 match / {
     <h1>Hello {.navigator.appName}</h1>
-}
-</textarea>
+    
+}</textarea>
                 </div>
             </div>
 
