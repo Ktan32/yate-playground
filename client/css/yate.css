@@ -52,12 +52,18 @@ body {
 .header_links {
     padding: 0;
     margin: 0;
+}
 
+.remove-spaces {
+    line-height: 0;
+    font-size: 0;
 }
 
 .header_links a {
     color: #cccccc;
     border: 0;
+    font-size: 13px;
+    line-height: 21px;
 }
 
 .header_links a:hover, a:active, a:focus {
@@ -65,13 +71,13 @@ body {
 }
 
 .button-link {
-    padding: 10px 5px 10px 10px;
+    padding: 10px 9px 10px 9px;
 }
 
 #title {
     font-size: 18px;
     font-weight: bold;
-    margin-right: 5px;
+    margin-right: 10px;
 }
 
 .right_menu_wrapper {
