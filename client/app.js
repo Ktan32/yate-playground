@@ -126,7 +126,7 @@
         var paste_input = $('#paste_input');
         /* SAVING! */
         $('#save_button').click(function() {
-            var copy_block = $('#copy_block');
+            var copy_block = $('#copy_block_container');
             var loader_block = $('#loader_block');
             var data = {
                 "description": "Just an YATE file",
