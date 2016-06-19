@@ -148,6 +148,12 @@ body {
     border-bottom-left-radius: 2px;
 }
 
+#paste_input:focus {
+    box-shadow: none;
+    outline: 0 none;
+    border-color: #ccc;
+}
+
 #loader_block {
     margin-right: 20px;
     display: none;
