@@ -30,10 +30,11 @@ function onSaveClick(event) {
 
             copy_block.show();
             var base_url = window.location.origin + window.location.pathname;
-            paste_input.val(base_url + '?' + queryString);
+            var new_url = base_url + '?' + queryString;
+            paste_input.val(new_url);
             paste_input.select();
 
-            $('#open_button_url').attr('href', answer.html_url);
+            $('#open_button_url').attr('href', new_url);
         },
         error: function(xhr, status, error) {
             alert('Something went wrong, check the console');
